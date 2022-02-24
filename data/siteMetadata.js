@@ -8,7 +8,7 @@ const siteMetadata = {
   siteUrl: 'https://masachi.cv3sarato.ga',
   siteRepo: 'https://github.com/masachi/masachi.github.io',
   siteLogo: '/static/images/logo.png',
-  image: 'https://avatars.githubusercontent.com/u/16058804',
+  image: '/static/images/avatar.png',
   // socialBanner: '/static/images/twitter-card.png',
   email: 'zhangjb42@gmail.com',
   github: 'https://github.com/masachi',

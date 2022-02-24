@@ -47,7 +47,7 @@ const NewsletterForm = ({ title = '订阅最新文章' }) => {
             className="w-72 rounded-md px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
             id="email-input"
             name="email"
-            placeholder={subscribed ? "你已经订阅了 !  🎉" : '输入邮箱'}
+            placeholder={subscribed ? '你已经订阅了 !  🎉' : '输入邮箱'}
             ref={inputEl}
             required
             type="email"

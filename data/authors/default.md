@@ -1,6 +1,6 @@
 ---
 name: Masachi Zhang
-avatar: /static/images/avatar.png
+avatar: https://avatars.githubusercontent.com/u/16058804
 occupation: 自称废物
 email: zhangjb42@gmail.com
 twitter: https://twitter.com/MasachiZhang

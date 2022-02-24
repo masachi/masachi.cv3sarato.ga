@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'Masachi Rubbish Blog',
   author: 'Masachi Zhang',
   headerTitle: 'Rubbish Blog',
-  description: 'A blog I think is rubbish',
+  description: '自认为没什么营养的辣鸡网站',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://masachi.cv3sarato.ga',

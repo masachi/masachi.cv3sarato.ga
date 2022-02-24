@@ -13,7 +13,7 @@ const siteMetadata = {
   email: 'zhangjb42@gmail.com',
   github: 'https://github.com/masachi',
   twitter: 'https://twitter.com/MasachiZhang',
-  locale: 'en-US',
+  locale: 'zh-CN',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.
@@ -28,7 +28,7 @@ const siteMetadata = {
     // Please add your .env file and modify it according to your selection
     provider: 'buttondown',
   },
-  comment: {
+  // comment: {
     // If you want to use a commenting system other than giscus you have to add it to the
     // content security policy in the `next.config.js` file.
     // Select a provider and use the environment variables associated to it
@@ -75,7 +75,7 @@ const siteMetadata = {
     //   // https://help.disqus.com/en/articles/1717111-what-s-a-shortname
     //   shortname: process.env.NEXT_PUBLIC_DISQUS_SHORTNAME,
     // },
-  },
+  // },
 }
 
 module.exports = siteMetadata

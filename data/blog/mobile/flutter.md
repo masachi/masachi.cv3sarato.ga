@@ -23,7 +23,7 @@ Flutter的布局 与 前端的 Flex 差不多，同样是分为Row 与 Column。
 
 说到底这个和React中的state的理念一样，同样也是通过state的变化来控制页面显示的元素或者元素的状态，这里的所说的元素就是Widget。
 
-但是在Flutter里面创建一个包含State的Widget需要先创建StatefulWidget的子类 然后重写其createState方法 返回一个带State的Widget, 但是Dart里面没有像Java一样的匿名内部类，所以只能创建一个State<SubClass of StatefulWidget\>的子类来build一个真正的Widget。
+但是在Flutter里面创建一个包含State的Widget需要先创建StatefulWidget的子类 然后重写其createState方法 返回一个带State的Widget, 但是Dart里面没有像Java一样的匿名内部类，所以只能创建一个State<SubClass of StatefulWidget>的子类来build一个真正的Widget。
 
 与React一样，Flutter也支持自己管理或者说类似的父组件管理或者说是Redux这样的库来管理State。
 ![](https://flutter.cn/assets/images/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app-state.png)

@@ -15,28 +15,28 @@ summary: 个人收集的资源分享 包含各种可能有用的资源
 | 动漫下载 | https://kisssub.org | 动画下载站 | url中即包含torrent hash 没必要开启虫洞 |
 | 电影下载 | https://btbtt12.com | 电影剧集下载 | 包含广告 请使用去广告 |
 | 用户脚本 | https://greasyfork.org | 用户脚本 | / |
-| 字幕相关 | https://subhd.tv<br>https://assrt.net | 电影剧集字幕相关 | / |
-| 美剧相关 | https://rargb.com<br>https://rargb.to<br>https://rargb.is | 美剧 | 生肉注意 |
+| 字幕相关 | https://subhd.tv<br />https://assrt.net | 电影剧集字幕相关 | / |
+| 美剧相关 | https://rargb.com<br />https://rargb.to<br />https://rargb.is | 美剧 | 生肉注意 |
 | 美剧相关2 | https://kickasss.to | / | 可能已经down了 使用前请确认可用 |
-| RSSHUB | https://rsshub.app<br>https://rsshub.masachi.vercel.app | RSS订阅 | 文档地址: docs.rsshub.app 可私有部署 |
-| Heroku | https://heroku.com | 免费服务托管 | 注册用户600+h/month free，绑定信用卡之后1000+h/month free <br>可使用container<br>web建议nginx<br>nginx buildpack: https://github.com/heroku/heroku-buildpack-nginx |
-| Vercel | https://vercel.com | 前端免费服务托管<br>注册用户free | / |
-| Domain注册 | https://freenom.com | domain注册 但是不是com这类域名<br>不用备案<br>每年可free续 12month | / |
-| SSL | https://dnspod.com | 腾讯的SSL <br>单网站无限续 1年 | / |
-| DNS服务 | https://dnspod.com<br>https://aliyun.com | 国内DNS服务 | / |
-| DNS 服务2 | https://dns.he.net | HE DNS <br> 建议部署一套<br>| / |
-| Cloudflare | https://cloudflare.com | DNS&SSL&CDN一站式解决方案<br>部分功能收费 | Cloudflare不能与其他DNS服务混用 请注意 |
-| Cloudflare Workers | https://workers.cloudflare.com | 边缘计算<br> 只需要写js、ruby之类的代码即刻开箱使用 | 网站镜像制作参考: https://github.com/xiaoyang-sde/rocket-booster |
+| RSSHUB | https://rsshub.app<br />https://rsshub.masachi.vercel.app | RSS订阅 | 文档地址: docs.rsshub.app 可私有部署 |
+| Heroku | https://heroku.com | 免费服务托管 | 注册用户600+h/month free，绑定信用卡之后1000+h/month free <br />可使用container<br />web建议nginx<br />nginx buildpack: https://github.com/heroku/heroku-buildpack-nginx |
+| Vercel | https://vercel.com | 前端免费服务托管<br />注册用户free | / |
+| Domain注册 | https://freenom.com | domain注册 但是不是com这类域名<br />不用备案<br />每年可free续 12month | / |
+| SSL | https://dnspod.com | 腾讯的SSL <br />单网站无限续 1年 | / |
+| DNS服务 | https://dnspod.com<br />https://aliyun.com | 国内DNS服务 | / |
+| DNS 服务2 | https://dns.he.net | HE DNS <br /> 建议部署一套<br />| / |
+| Cloudflare | https://cloudflare.com | DNS&SSL&CDN一站式解决方案<br />部分功能收费 | Cloudflare不能与其他DNS服务混用 请注意 |
+| Cloudflare Workers | https://workers.cloudflare.com | 边缘计算<br /> 只需要写js、ruby之类的代码即刻开箱使用 | 网站镜像制作参考: https://github.com/xiaoyang-sde/rocket-booster |
 | **ApkMirror** | https://apkmirror.com | Google Play 应用 | / |
 | F-Driod | https://f-droid.org  | 开源的Android应用 商店 | / |
-| Github镜像<br>自维护 | https://github.masachi.workers.dev | Cloudflare Workers 维护的镜像 | 不可登录 不可clone |
+| Github镜像<br />自维护 | https://github.masachi.workers.dev | Cloudflare Workers 维护的镜像 | 不可登录 不可clone |
 | GFWList | https://github.com/gfwlist/gfwlist | / | / |
 | neohost | https://github.com/neoFelhz/neohosts | ads | / |
 | 广告净化器 | https://raw.githubusercontent.com/hopol/ChinaList2.0/master/ChinaList2.0.txt | video ads | / |
-| EasyList | Easylist 官方规则<br>https://easylist.to/easylist/easylist.txt<br>EasyList China 中文补充规则<br>https://easylist-downloads.adblockplus.org/easylistchina.txt | ads | / |
+| EasyList | Easylist 官方规则<br />https://easylist.to/easylist/easylist.txt<br />EasyList China 中文补充规则<br />https://easylist-downloads.adblockplus.org/easylistchina.txt | ads | / |
 | Anti-AD | https://github.com/privacy-protection-tools/anti-AD | ads |  |
 | IFTTT | https://ifttt.com | 触发器 if this then that | 可于应用连接并触发相关推送 |
-| Grafana | https://grafana.com | 数据看板 | 需配合Prometheus<br>free 10 dashboards |
+| Grafana | https://grafana.com | 数据看板 | 需配合Prometheus<br />free 10 dashboards |
 | 以图搜图 | https://saucenao.com/ | GHS | / |
 | 屏幕共享 | https://hyperbeam.com/ | / | / |
 |  |  |  |  |
@@ -46,12 +46,12 @@ summary: 个人收集的资源分享 包含各种可能有用的资源
 |             名称              |                        描述                         |其他|
 |:---------------------------:|:-------------------------------------------------:|:----:|
 |         AdGuard[^4]         |                  广告屏蔽插件  自定义规则见上                  |
-|        TemperMonkey         |                   脚本插件<br>脚本见上文                   | / |
-|         RescueTime          |         统计用户访问网页时间<br>可统计用户今日的效率 个人认为很好用          | 可接入IFTTT |
-|          Ataraxia           |       Chrome & Firefox 用<br>新标签页显示Bing今日图片        | / |
+|        TemperMonkey         |                   脚本插件<br />脚本见上文                   | / |
+|         RescueTime          |         统计用户访问网页时间<br />可统计用户今日的效率 个人认为很好用          | 可接入IFTTT |
+|          Ataraxia           |       Chrome & Firefox 用<br />新标签页显示Bing今日图片        | / |
 |        SwitchyOmega         |                      Proxy管理                      | / |
 |   GitHub Repository Size    |                  显示Github Repo大小                  | / |
-|          购物党自动比价工具          |            比价<br>显示历史价格<br>看看是不是划算.jpg            | / |
+|          购物党自动比价工具          |            比价<br />显示历史价格<br />看看是不是划算.jpg            | / |
 |       FeHelper(前端助手)        | 前端常用工具集合(可按需安装FH插件,如信息编码转换、页面去色、JSON比对、进制转换工具...) | / |
 | <a href="https://github.com/refined-github/refined-github">Refined GitHub</a> |               简化了GitHub接口并添加了有用的功能                | / |
 | <a href="https://chrome.google.com/webstore/detail/ublacklist/pncfbmialoiaghdehhbnbhkkgmjanfhe">uBlacklist</a> |   可以帮你在谷歌(支持必应、百度)搜索结果中屏蔽一些你不想看到的网站,屏蔽规则支持正则表达式   | / |

@@ -447,7 +447,7 @@ public class SessionConfiguration {
 
 对于中间为 "sessions:expires" 和 "expirations" 的两个来说，主要为了实现主动删除 Redis 过期的 Session 会话，解决 Redis 惰性删除的“问题”。
 
-"spring:session:expirations:{时间戳}" ，是为了获得每分钟需要过期的 sessionid 集合，即 {时间戳} 是每分钟的时间戳。
+"spring:session:expirations:\{时间戳\}" ，是为了获得每分钟需要过期的 sessionid 集合，即 \{时间戳\} 是每分钟的时间戳。
 
 #### 1.7.1. Spring Security + Spring Session (TODO： 详细解释)
 Spring Security与 redis配置方式几乎相同 ，Spring Security在集成之后 redis中的session相关的字段被保护起来

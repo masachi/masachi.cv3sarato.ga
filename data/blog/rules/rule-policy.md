@@ -7,8 +7,6 @@ draft: false
 summary: 本人推崇的开发原则以及其他一些定律规律总结，原文地址： https://github.com/nusr/hacker-laws-zh
 ---
 
-## 定律 & 原则
-
 ### 90-9-1 法则 (90–9–1 Principle or 1% Rule)
 
 - [英文维基百科](https://en.wikipedia.org/wiki/1%25_rule_(Internet_culture))

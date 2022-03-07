@@ -4,7 +4,7 @@ lastmod: '2022-03-07'
 date: '2022-03-07'
 tags: ['总结', '摸鱼']
 draft: false
-summary: 本人推崇的开发原则以及其他一些定律规律总结，原文地址： https://github.com/nusr/hacker-laws-zh
+summary: 开发原则以及其他一些定律规律总结，原文地址： https://github.com/nusr/hacker-laws-zh
 ---
 
 ### 90-9-1 法则 (90–9–1 Principle or 1% Rule)

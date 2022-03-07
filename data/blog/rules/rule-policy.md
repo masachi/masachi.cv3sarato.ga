@@ -7,7 +7,7 @@ draft: false
 summary: 本人推崇的开发原则以及其他一些定律规律总结，原文地址： https://github.com/nusr/hacker-laws-zh
 ---
 
-## 定律
+## 定律 & 原则
 
 ### 90-9-1 法则 (90–9–1 Principle or 1% Rule)
 
@@ -31,7 +31,7 @@ summary: 本人推崇的开发原则以及其他一些定律规律总结，原�
 
 下图展示了一些运行速度的提升潜能的例子：
 
-![阿姆达尔定律](../../assets/amdahls_law.png)
+![阿姆达尔定律](/static/assets/amdahls_law.png)
 
 _(图片来源：By Daniels220 at English Wikipedia, Creative Commons Attribution-Share Alike 3.0 Unported, https://en.wikipedia.org/wiki/File:AmdahlsLaw.svg)_
 
@@ -192,7 +192,7 @@ _(图片来源：By Daniels220 at English Wikipedia, Creative Commons Attributio
 
 技术成熟度曲线是[高德纳咨询公司](https://zh.wikipedia.org/wiki/%E9%AB%98%E5%BE%B7%E7%BA%B3%E5%92%A8%E8%AF%A2%E5%85%AC%E5%8F%B8)对技术最初兴起和发展的视觉展现。一图顶千言：
 
-![The Hype Cycle](../../assets/gartner_hype_cycle.png)
+![The Hype Cycle](/static/assets/gartner_hype_cycle.png)
 
 _(图片来源: By Jeremykemp at English Wikipedia, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=10547051)_
 

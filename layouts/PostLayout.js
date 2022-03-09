@@ -17,7 +17,7 @@ const discussUrl = (slug) =>
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
-  const { slug, fileName, date, title, tags } = frontMatter
+  const { slug, fileName, date, title, tags, lastmod } = frontMatter
 
   return (
     <SectionContainer>
@@ -39,6 +39,14 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
                     </time>
                   </dd>
+                  {
+                    lastmod &&
+                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <time dateTime={lastmod}>
+                        更新于{new Date(lastmod).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
+                      </time>
+                    </dd>
+                  }
                 </div>
               </dl>
               <div>

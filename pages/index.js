@@ -42,10 +42,11 @@ export default function Home({ posts }) {
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
                       {
-                        lastmod &&
+                        lastmod && (
                         <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                           <time dateTime={lastmod}>更新于{formatDate(lastmod)}</time>
                         </dd>
+                        )
                       }
                     </dl>
                     <div className="space-y-5 xl:col-span-3">

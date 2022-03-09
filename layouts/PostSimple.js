@@ -25,7 +25,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     <time dateTime={date}>{formatDate(date)}</time>
                   </dd>
                   {
-                    lastmod && (
+lastmod && (
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                       <time dateTime={lastmod}>更新于{formatDate(lastmod)}</time>
                     </dd>

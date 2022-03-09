@@ -40,12 +40,12 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     </time>
                   </dd>
                   {
-lastmod && (
-                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <time dateTime={lastmod}>
-                        更新于{new Date(lastmod).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
-                      </time>
-                    </dd>
+                    lastmod && (
+                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                        <time dateTime={lastmod}>
+                          更新于{new Date(lastmod).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
+                        </time>
+                      </dd>
                     )
                   }
                 </div>

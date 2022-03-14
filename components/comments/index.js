@@ -22,10 +22,7 @@ const DisqusComponent = dynamic(
 
 const Comments = ({ frontMatter }) => {
   let term
-  switch (
-    siteMetadata.comment.giscusConfig.mapping ||
-    siteMetadata.comment.utterancesConfig.issueTerm
-  ) {
+  switch (siteMetadata.comment.utterancesConfig.issueTerm) {
     case 'pathname':
       term = frontMatter.slug
       break

@@ -43,7 +43,7 @@ summary: reconciler 运作流程
 
 ![](/static/assets/react//process-before.png)
 
-### 创建全局对象 {#create-global-obj}
+### 创建全局对象
 
 无论`Legacy, Concurrent或Blocking`模式, react 在初始化时, 都会创建 3 个全局对象
 

@@ -54,7 +54,7 @@ summary: reconciler 运作流程
 2. [`fiberRoot`对象](https://github.com/facebook/react/blob/v17.0.2/packages/react-reconciler/src/ReactFiberRoot.old.js#L83-L103)
 
    - 属于`react-reconciler`包, 作为`react-reconciler`在运行过程中的全局上下文, 保存 fiber 构建过程中所依赖的全局状态.
-   - 其大部分实例变量用来存储`fiber 构造循环`(详见[`两大工作循环`](./workloop.md))过程的各种状态.react 应用内部, 可以根据这些实例变量的值, 控制执行逻辑.
+   - 其大部分实例变量用来存储`fiber 构造循环`过程的各种状态.react 应用内部, 可以根据这些实例变量的值, 控制执行逻辑.
 
 3. [`HostRootFiber`对象](https://github.com/facebook/react/blob/v17.0.2/packages/react-reconciler/src/ReactFiber.old.js#L431-L449)
    - 属于`react-reconciler`包, 这是 react 应用中的第一个 Fiber 对象, 是 Fiber 树的根节点, 节点的类型是`HostRoot`.
@@ -199,7 +199,7 @@ ReactDOMRoot.prototype.unmount = ReactDOMBlockingRoot.prototype.unmount = functi
 1. 调用`createRootImpl`创建`fiberRoot`对象, 并将其挂载到`this._internalRoot`上.
 2. 原型上有`render`和`unmount`方法, 且内部都会调用`updateContainer`进行更新.
 
-### 创建 fiberRoot 对象 {#create-root-impl}
+### 创建 fiberRoot 对象
 
 无论哪种模式下, 在`ReactDOM(Blocking)Root`的创建过程中, 都会调用一个相同的函数`createRootImpl`, 查看后续的函数调用, 最后会创建`fiberRoot 对象`(在这个过程中, 特别注意`RootTag`的传递过程):
 
@@ -363,9 +363,7 @@ export function updateContainer(
 
 `updateContainer`函数位于`react-reconciler`包中, 它串联了`react-dom`与`react-reconciler`. 此处暂时不深入分析`updateContainer`函数的具体功能, 需要关注其最后调用了`scheduleUpdateOnFiber`.
 
-在前文[`reconciler 运作流程`](./reconciler-workflow.md)中, 重点分析过`scheduleUpdateOnFiber`是`输入`阶段的入口函数.
-
-所以到此为止, 通过调用`react-dom`包的`api`(如: `ReactDOM.render`), `react`内部经过一系列运转, 完成了初始化, 并且进入了`reconciler 运作流程`的第一个阶段.
+通过调用`react-dom`包的`api`(如: `ReactDOM.render`), `react`内部经过一系列运转, 完成了初始化, 并且进入了`reconciler 运作流程`的第一个阶段.
 
 ## 思考
 

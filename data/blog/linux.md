@@ -6,14 +6,14 @@ draft: false
 summary: 关于Linux 以及网络监控 系统监控相关分享，大部分还是网络监控
 ---
 
-
-
 ## 运维相关
 
 ### 1. btop
-btop是个Linux系统全面监控的小工具 界面十分花哨 默认功能即可满足很多需求 GitHub地址: [btop](https://github.com/aristocratos/btop)
+
+btop 是个 Linux 系统全面监控的小工具 界面十分花哨 默认功能即可满足很多需求 GitHub 地址: [btop](https://github.com/aristocratos/btop)
 
 安装脚本：
+
 ```
 #! /bin/bash
 mkdir btop
@@ -24,11 +24,13 @@ bash install.sh
 ```
 
 ### 2. vnstat
-vnstat 是一款流量监控软件 他可以根据网卡进行监控流量 提供实时速度 小时、日、周、月流量统计 但是不能根据相关设定来分开统计某一用户或者其他方式统计(说到底还是想服务于v2 然而不行 v2的流量统计下文详述) 同时其支持粗略预计今日流量情况 从ISP后台查看到的数据与其统计数据差别不大 因此有一定的可行度
 
-安装方法： ```apt-get install vnstat -y```
+vnstat 是一款流量监控软件 他可以根据网卡进行监控流量 提供实时速度 小时、日、周、月流量统计 但是不能根据相关设定来分开统计某一用户或者其他方式统计(说到底还是想服务于 v2 然而不行 v2 的流量统计下文详述) 同时其支持粗略预计今日流量情况 从 ISP 后台查看到的数据与其统计数据差别不大 因此有一定的可行度
+
+安装方法： `apt-get install vnstat -y`
 
 命令详情：
+
 ```
 vnStat 2.6 by Teemu Toivola <tst at iki dot fi>
 
@@ -53,7 +55,9 @@ vnStat 2.6 by Teemu Toivola <tst at iki dot fi>
 
 Use "--longhelp" or "man vnstat" for complete list of options.
 ```
+
 配置文件样例：
+
 ```
 # vnStat 2.6 config file
 ##
@@ -242,22 +246,27 @@ CTx             "606060"
 CRxD            "-"
 CTxD            "-"
 ```
-interface为当前需要监控的网络接口 
-与example config区别在于
+
+interface 为当前需要监控的网络接口
+与 example config 区别在于
+
 ```
 UnitMode 1
 RateUnit 0
 RateUnitMode 1
 ```
+
 以上配置项改动之后更符合常规显示方式
 
-
 ### 3. Linux XanMod Kernel
-[XanMod](https://xanmod.org/) 这个kernel 基于最新的Linux Kernel Mainline 同时包含了Google BBRv2 并且做了一定的Cache Memory优化 目前在us-sc上测试效果评估中 若效果不错，会将此内核推广至其他机器上 同时于us-sc上测试BBRv2 与 BBR 之间的性能差异
-us-sc上使用的是qdisc: fq_pie;comgestion_control: bbr2 (虽然我是没看出来有快多少....)
 
-### 4. ulimit优化
-vi /etc/security/limit.conf
+[XanMod](https://xanmod.org/) 这个 kernel 基于最新的 Linux Kernel Mainline 同时包含了 Google BBRv2 并且做了一定的 Cache Memory 优化 目前在 us-sc 上测试效果评估中 若效果不错，会将此内核推广至其他机器上 同时于 us-sc 上测试 BBRv2 与 BBR 之间的性能差异
+us-sc 上使用的是 qdisc: fq_pie;comgestion_control: bbr2 (虽然我是没看出来有快多少....)
+
+### 4. ulimit 优化
+
+`vi /etc/security/limit.conf`
+
 ```
 *                 soft	  nproc           10240
 *                 hard	  nproc           10240
@@ -269,7 +278,9 @@ root              hard    nproc           10240
 root              soft    nofile          10240
 root              hard    nofile          10240
 ```
-vi /etc/profile
+
+`vi /etc/profile`
+
 ```
 ulimit -n 10240
 ulimit -u 8192

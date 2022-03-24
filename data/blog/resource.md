@@ -1,6 +1,6 @@
 ---
 title: 资源分享
-lastmod: '2022-03-10'
+lastmod: '2022-03-24'
 date: '2022-02-24'
 tags: ['资源', '摸鱼', '分享']
 draft: false
@@ -42,6 +42,7 @@ summary: 个人收集的资源分享 包含各种可能有用的资源
 |        屏幕共享         |                                                                       https://hyperbeam.com/                                                                        |                                      /                                      |                                                                                       /                                                                                       |
 |      Games Shelter      |                                                                      http://www.flysheep6.com                                                                       |                                      /                                      |                                                                                       /                                                                                       |
 |     Another Shelter     |                                                                  https://fitgirl-repacks.website/                                                                   |                                      /                                      |                                                                                       /                                                                                       |
+|  Another Game Shelter   |                                                                       https://igg-games.com/                                                                        |                                      /                                      |                                                                                       /                                                                                       |
 |                         |                                                                                                                                                                     |                                                                             |                                                                                                                                                                               |
 |                         |                                                                                                                                                                     |                                                                             |                                                                                                                                                                               |
 

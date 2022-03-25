@@ -2,6 +2,10 @@ import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
 import { PageSEO } from '@/components/SEO'
 
+const avatarLoader = ({ src, width, quality }) => {
+  return `https://avatars.githubusercontent.com/u/${src}?s=${width}`
+}
+
 export default function AuthorLayout({ children, frontMatter }) {
   const { name, avatar, occupation, company, email, twitter, linkedin, github } = frontMatter
 
@@ -17,7 +21,8 @@ export default function AuthorLayout({ children, frontMatter }) {
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center space-x-2 pt-8">
             <Image
-              src="https://avatars.githubusercontent.com/u/16058804?s=192"
+              loader={avatarLoader}
+              src="16058804"
               alt="avatar"
               width="192px"
               height="192px"

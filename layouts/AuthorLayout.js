@@ -17,7 +17,7 @@ export default function AuthorLayout({ children, frontMatter }) {
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center space-x-2 pt-8">
             <Image
-              src={avatar}
+              src="https://avatars.githubusercontent.com/u/16058804?s=192"
               alt="avatar"
               width="192px"
               height="192px"

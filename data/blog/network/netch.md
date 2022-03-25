@@ -11,9 +11,13 @@ summary: Netch 简单教程
 1. 下载[Netch](https://github.com/netchx/netch/releases) 并解压
 2. 安装 [.Net](https://dotnet.microsoft.com/en-us/download/dotnet)
 3. 双击 Netch.exe 打开
+
    ![](/static/assets/netch/first-screen.png)
+
 4. 点击服务器 添加 socks5 服务器，输入备注地址 端口 随后保存
+
    ![](/static/assets/netch/server-active.png)
+
 5. 随后模式可以选择想要加速的游戏，之后点击启动即可
 
 Extra:

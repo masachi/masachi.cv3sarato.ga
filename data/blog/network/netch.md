@@ -14,7 +14,7 @@ summary: Netch 简单教程
 
    ![](/static/assets/netch/first-screen.png)
 
-4. 点击服务器 添加 socks5 服务器，输入备注地址 端口 随后保存
+4. 点击服务器 添加 socks5 服务器，输入备注 地址 端口 随后保存
 
    ![](/static/assets/netch/server-active.png)
 

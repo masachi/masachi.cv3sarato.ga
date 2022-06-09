@@ -1,5 +1,5 @@
 ---
-title: 杂谈1
+title: 网站创建从0到1-准备
 date: '2022-06-09'
 tags: ['摸鱼', '网站创建']
 draft: false

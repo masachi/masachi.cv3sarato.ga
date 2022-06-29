@@ -13,6 +13,7 @@ summary: 网站创建从0到1-准备
 ##### 收费域名
 
 如果说需要买备案的 domain，一般来说到[阿里云](https://mi.aliyun.com/)买就行
+
 如果说需要买不用备案的 domain，像是到[NameCheap](https://www.namecheap.com/)或者是[Google Domain](https://domains.google/) 买，然后一般来说这类域名仅支持信用卡付款
 
 #### 免费域名

@@ -67,7 +67,44 @@ volatile 是 Java 虚拟机提供的轻量级的同步机制，它有３个特�
 
 ## 8. Java HashMap 和 HashTable 的区别
 
+1. 线程是否安全
+   HashMap 是非线程安全的，Hashtable 是线程安全的,因为 Hashtable 内部的方法基本都经过 synchronized 修饰。（如果你要保证线程安全的话就使用 ConcurrentHashMap ）；
+
+2. 效率
+   因为线程安全的问题，HashMap 要比 Hashtable 效率高一点。另外，Hashtable 基本被淘汰，不要在代码中使用它；
+
+3. 对 Null key 和 Null value 的支持
+   HashMap 可以存储 null 的 key 和 value，但 null 作为键只能有一个，null 作为值可以有多个；Hashtable 不允许有 null 键和 null 值，否则会抛出 NullPointerException。
+
+4. 初始容量大小和每次扩充容量大小的不同 ：
+
+   - 创建时如果不指定容量初始值，Hashtable 默认的初始大小为 11，之后每次扩充，容量变为原来的 2n+1。HashMap 默认的初始化大小为 16。之后每次扩充，容量变为原来的 2 倍。
+
+   - 创建时如果给定了容量初始值，那么 Hashtable 会直接使用你给定的大小，而 HashMap 会将其扩充为 2 的幂次方大小（HashMap 中的 tableSizeFor()方法保证，下面给出了源代码）。也就是说 HashMap 总是使用 2 的幂作为哈希表的大小,后面会介绍到为什么是 2 的幂次方。
+
+5. 底层数据结构
+   JDK1.8 以后的 HashMap 在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行数组扩容，而不是转换为红黑树）时，将链表转化为红黑树，以减少搜索时间。Hashtable 没有这样的机制。
+
+6. 判断包含的方法
+   Hashtable 有 contains 的方法。HashMap 是 Hashtable 的轻量级实现，HashMap 把 Hashtable 的 contains 方法去掉了，改成 containsvalue 和 containsKey。因为 contains 方法容易让人引起误解。
+
 ## 9. Java TCP UDP 开发
+
+#### UDP
+
+UDP 协议是一种不可靠的网络协议，它在通信的两端各建立一个 Socket 对象，但是这两个 Socket 只是发送，接收数据的对象，因此对于基于 UDP 协议的通信双方而言，没有所谓的客户端和服务器的概念。
+
+Java 提供了 DatagramSocket 类作为基于 UDP 协议的 Socket
+
+UDP 发送数据步骤：
+
+1.创建发送端的 Socket 对象 (DatagramSocket) 2.创建数据，并把数据打包 调用 DatagramSocket 对象的方法发送数据 3.关闭发送端
+UDP 接收数据步骤： 1.创建接收端的 Socket 对象 (DatagramSocket) 2.创建一个数据包，用于接收数据 3.调用 DatagramSocket 对象的方法接收数据 4.解析数据包，并把数据在控制台显示 5.关闭接收端
+
+#### TCP
+
+Java 对基于 TCP 协议的的网络提供了良好的封装，使用 Socket 对象来代表两端的通信端口，并通过 Socket 产生 IO 流来进行网络通信。
+Java 为客户端提供了 Socket 类，为服务器端提供了 ServerSocket
 
 ## 10. Kotlin 代理
 

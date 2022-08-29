@@ -8,7 +8,7 @@ const ContentSecurityPolicy = `
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app *.googletagmanager.com utteranc.es;
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
-  media-src 'none';
+  media-src music.163.com *.music.126.net;
   connect-src *;
   font-src 'self';
   frame-src giscus.app utteranc.es

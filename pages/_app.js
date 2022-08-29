@@ -12,6 +12,11 @@ import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
 import { ClientReload } from '@/components/ClientReload'
 
+import dynamic from 'next/dynamic'
+const MusicPlayer = dynamic(() => import('@/components/MusicPlayer'), {
+  ssr: false,
+})
+
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
@@ -26,6 +31,7 @@ export default function App({ Component, pageProps }) {
       <LayoutWrapper>
         <Component {...pageProps} />
       </LayoutWrapper>
+      <MusicPlayer />
     </ThemeProvider>
   )
 }

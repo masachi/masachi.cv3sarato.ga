@@ -3,22 +3,17 @@ import ReactJkMusicPlayer from 'react-jinke-music-player'
 import 'react-jinke-music-player/assets/index.css'
 import Locale from 'react-jinke-music-player/lib/config/locale'
 
+const musicData = require('./data/music-data.json')
+
 const params = {
   // audio lists model
-  audioLists: [
-    {
-      name: '歌に形はないけれど',
-      singer: 'doriko',
-      cover: 'https://p2.music.126.net/dWt2GQ9DtguAKu46D6zDmw==/925788790612409.jpg',
-      musicSrc: 'https://music.163.com/song/media/outer/url?id=22635188.mp3',
-    },
-  ],
+  audioLists: musicData,
   defaultPlayIndex: 0,
   theme: 'auto',
   bounds: 'body',
   quietUpdate: true,
   clearPriorAudioLists: false,
-  autoPlayInitLoadPlayList: false,
+  autoPlayInitLoadPlayList: true,
   preload: false,
   glassBg: false,
   remember: true,

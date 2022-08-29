@@ -2,18 +2,21 @@ import React from 'react'
 import ReactJkMusicPlayer from 'react-jinke-music-player'
 import 'react-jinke-music-player/assets/index.css'
 import Locale from 'react-jinke-music-player/lib/config/locale'
+import lodash from 'lodash'
 
 const musicData = require('./data/music-data.json')
+
+let defaultPlayIndex = lodash.random(0, musicData.length || 100)
 
 const params = {
   // audio lists model
   audioLists: musicData,
-  defaultPlayIndex: 0,
+  defaultPlayIndex: defaultPlayIndex,
   theme: 'auto',
   bounds: 'body',
   quietUpdate: false,
   clearPriorAudioLists: false,
-  autoPlayInitLoadPlayList: true,
+  autoPlayInitLoadPlayList: false,
   preload: 'auto',
   glassBg: false,
   remember: true,
@@ -25,7 +28,7 @@ const params = {
   defaultPlayMode: 'order',
   mode: 'full',
   once: false,
-  autoPlay: true,
+  autoPlay: false,
   toggleMode: false,
   showMiniModeCover: true,
   showMiniProcessBar: false,

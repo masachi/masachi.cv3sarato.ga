@@ -41,7 +41,7 @@ const params = {
   showDownload: false,
   showPlayMode: true,
   showThemeSwitch: false,
-  showLyric: true,
+  showLyric: false,
   showDestroy: false,
   extendsContent: null,
   defaultVolume: 1,

@@ -28,7 +28,10 @@ export default function Gallery({ images }) {
         return (
           <div className="item" key={uuidv4()}>
             <div className="thumbnail">
-              <img src={`/${galleryPath.replace('public/', '')}/${item.fileName}`} />
+              <img
+                data-grid-lazy="true"
+                src={`/${galleryPath.replace('public/', '')}/${item.fileName}`}
+              />
             </div>
           </div>
         )

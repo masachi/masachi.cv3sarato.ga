@@ -2,6 +2,7 @@ import '@/css/tailwind.css'
 import '@/css/prism.css'
 import '@/css/masonry.css'
 import 'katex/dist/katex.css'
+import 'react-photo-view/dist/react-photo-view.css'
 
 import '@fontsource/inter/variable-full.css'
 

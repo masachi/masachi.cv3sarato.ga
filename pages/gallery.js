@@ -1,12 +1,12 @@
 import React from 'react'
-import Masonry from 'react-masonry-css'
 import { v4 as uuidv4 } from 'uuid'
 import fs from 'fs'
 import path from 'path'
+import { MasonryInfiniteGrid } from '@egjs/react-infinitegrid'
 import Image from 'next/image'
 
 const root = process.cwd()
-const galleryPath = 'assets/gallery'
+const galleryPath = 'public/static/assets/gallery'
 
 export async function getStaticProps() {
   const images = fs.readdirSync(path.join(root, galleryPath))
@@ -23,18 +23,16 @@ export async function getStaticProps() {
 
 export default function Gallery({ images }) {
   return (
-    <Masonry
-      breakpointCols={6}
-      className="gallery-masonry-grid"
-      columnClassName="gallery-masonry-grid_column"
-    >
-      {images.map((item, index) => {
+    <MasonryInfiniteGrid className="container" gap={5} align={'justify'}>
+      {images.map((item) => {
         return (
-          <div key={uuidv4()}>
-            <Image src={`/${galleryPath}/${item.fileName}`} layout="fill" />
+          <div className="item" key={uuidv4()}>
+            <div className="thumbnail">
+              <img src={`/${galleryPath.replace('public/', '')}/${item.fileName}`} />
+            </div>
           </div>
         )
       })}
-    </Masonry>
+    </MasonryInfiniteGrid>
   )
 }

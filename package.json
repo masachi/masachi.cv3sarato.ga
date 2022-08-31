@@ -12,6 +12,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@egjs/react-infinitegrid": "^4.6.0",
     "@fontsource/inter": "4.5.2",
     "@mailchimp/mailchimp_marketing": "^3.0.58",
     "@tailwindcss/forms": "^0.4.0",
@@ -28,8 +29,8 @@
     "preact": "^10.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-image-gallery": "^1.2.9",
     "react-jinke-music-player": "^4.24.2",
-    "react-masonry-css": "^1.0.16",
     "reading-time": "1.3.0",
     "rehype-autolink-headings": "^6.1.0",
     "rehype-citation": "^0.4.0",

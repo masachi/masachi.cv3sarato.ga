@@ -7,7 +7,7 @@ const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app *.googletagmanager.com utteranc.es;
   style-src 'self' 'unsafe-inline';
-  img-src * blob: data:;
+  img-src * blob: data: masachi.cv3sarato.ga *.vercel.app;
   media-src music.163.com *.music.126.net;
   connect-src *;
   font-src 'self';

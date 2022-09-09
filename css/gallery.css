@@ -1,0 +1,44 @@
+.gallery-container {
+  height: 100%;
+}
+
+.gallery-container .ant-timeline.ant-timeline-label .ant-timeline-item-label {
+  width: calc(15% - 12px);
+}
+
+.gallery-container
+  .ant-timeline.ant-timeline-label
+  .ant-timeline-item-left
+  .ant-timeline-item-content {
+  width: 80%;
+  left: calc(15% - 4px);
+}
+
+.gallery-container .ant-timeline.ant-timeline-label .ant-timeline-item-tail {
+  left: 15%;
+}
+
+.gallery-container .ant-timeline.ant-timeline-label .ant-timeline-item-head {
+  left: 15%;
+}
+
+.container {
+  width: 100%;
+}
+
+.item {
+  display: inline-block;
+  width: 150px;
+  opacity: 1;
+}
+
+.item .thumbnail {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.item .thumbnail img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}

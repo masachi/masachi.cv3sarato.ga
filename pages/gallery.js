@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { PageSEO } from '@/components/SEO'
 import { PhotoSlider } from 'react-photo-view'
 import { Timeline } from 'antd'
@@ -11,45 +11,6 @@ const GIST_TOKEN = process.env.GIST_TOKEN
 const octokit = new Octokit({
   auth: GIST_TOKEN,
 })
-
-export async function getStaticProps() {
-  // const gistContent = await getContentByGistId(process.env.GIST_ID, process.env.FILE_NAME)
-  // const album = []
-  // const images = []
-  // Object.keys(gistContent)
-  //   .sort((dateA, dateB) => dayjs(dateB).unix() - dayjs(dateA).unix())
-  //   .forEach((date) => {
-  //     album.push({
-  //       date: date,
-  //       thumbnails: gistContent[date]
-  //         .filter((items) => items.length > 0)
-  //         .map((items) => {
-  //           let item = items[items.length >= 2 ? items.length - 2 : items[0]]
-  //           return {
-  //             ...item,
-  //             url: `${process.env.IMG_DOMAIN}${item.path}`,
-  //             src: `${process.env.IMG_DOMAIN}${item.path}`,
-  //           }
-  //         }),
-  //     })
-  //
-  //     images.push(
-  //       gistContent[date]
-  //         .filter((items) => items.length > 0)
-  //         .map((items) => {
-  //           let item = items[items.length - 1]
-  //           return {
-  //             src: `${process.env.IMG_DOMAIN}${item.path}`,
-  //             id: item.id,
-  //           }
-  //         })
-  //     )
-  //   })
-  //
-  return {
-    props: {},
-  }
-}
 
 const getContentByGistId = async (gist_id, fileName) => {
   const gistGetResponse = await octokit.request(`GET /gists/${gist_id}`)
@@ -112,6 +73,10 @@ export default function Gallery() {
     setImages(images)
     setAlbums(album)
   }
+
+  useEffect(() => {
+    dataProcess()
+  }, [])
 
   return (
     <>

@@ -6,7 +6,7 @@ import PhotoAlbum from 'react-photo-album'
 import { Octokit } from 'octokit'
 import dayjs from 'dayjs'
 
-const GIST_TOKEN = process.env.GIST_TOKEN
+const GIST_TOKEN = process.env.NEXT_PUBLIC_GIST_TOKEN
 
 const octokit = new Octokit({
   auth: GIST_TOKEN,
@@ -37,7 +37,10 @@ export default function Gallery() {
   }
 
   const dataProcess = async () => {
-    const gistContent = await getContentByGistId(process.env.GIST_ID, process.env.FILE_NAME)
+    const gistContent = await getContentByGistId(
+      process.env.NEXT_PUBLIC_GIST_ID,
+      process.env.NEXT_PUBLIC_FILE_NAME
+    )
     const album = []
     const images = []
     Object.keys(gistContent)
@@ -51,8 +54,8 @@ export default function Gallery() {
               let item = items[items.length >= 2 ? items.length - 2 : items[0]]
               return {
                 ...item,
-                url: `${process.env.IMG_DOMAIN}${item.path}`,
-                src: `${process.env.IMG_DOMAIN}${item.path}`,
+                url: `${process.env.NEXT_PUBLIC_IMG_DOMAIN}${item.path}`,
+                src: `${process.env.NEXT_PUBLIC_IMG_DOMAIN}${item.path}`,
               }
             }),
         })
@@ -63,7 +66,7 @@ export default function Gallery() {
             .map((items) => {
               let item = items[items.length - 1]
               return {
-                src: `${process.env.IMG_DOMAIN}${item.path}`,
+                src: `${process.env.NEXT_PUBLIC_IMG_DOMAIN}${item.path}`,
                 id: item.id,
               }
             })

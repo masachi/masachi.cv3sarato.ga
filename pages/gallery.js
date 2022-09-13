@@ -1,10 +1,40 @@
 import React, { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import { PageSEO } from '@/components/SEO'
 import { PhotoSlider } from 'react-photo-view'
 import { Timeline } from 'antd'
 import PhotoAlbum from 'react-photo-album'
 import { Octokit } from 'octokit'
 import dayjs from 'dayjs'
+
+const NextJsImage = ({ photo, imageProps, wrapperProps }) => {
+  const { width, height } = photo
+  const { src, alt, title, style, sizes, className, onClick } = imageProps
+  const { style: wrapperStyle, ...restWrapperProps } = wrapperProps ?? {}
+
+  return (
+    <div
+      style={{
+        width: style.width,
+        padding: style.padding,
+        marginBottom: style.marginBottom,
+        ...wrapperStyle,
+      }}
+      {...restWrapperProps}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        title={title}
+        sizes={sizes}
+        width={width}
+        height={height}
+        className={className}
+        onClick={onClick}
+      />
+    </div>
+  )
+}
 
 const GIST_TOKEN = process.env.NEXT_PUBLIC_GIST_TOKEN
 
@@ -41,8 +71,8 @@ export default function Gallery() {
       process.env.NEXT_PUBLIC_GIST_ID,
       process.env.NEXT_PUBLIC_FILE_NAME
     )
-    const album = []
-    const images = []
+    let album = []
+    let images = []
     Object.keys(gistContent)
       .sort((dateA, dateB) => dayjs(dateB).unix() - dayjs(dateA).unix())
       .forEach((date) => {
@@ -60,17 +90,15 @@ export default function Gallery() {
             }),
         })
 
-        images.push(
-          gistContent[date]
-            .filter((items) => items.length > 0)
-            .map((items) => {
-              let item = items[items.length - 1]
-              return {
-                src: `${process.env.NEXT_PUBLIC_IMG_DOMAIN}${item.path}`,
-                id: item.id,
-              }
-            })
-        )
+        images = gistContent[date]
+          .filter((items) => items.length > 0)
+          .map((items) => {
+            let item = items[items.length - 1]
+            return {
+              src: `${process.env.NEXT_PUBLIC_IMG_DOMAIN}${item.path}`,
+              id: item.id,
+            }
+          })
       })
 
     setImages(images)
@@ -96,6 +124,7 @@ export default function Gallery() {
                   onClick={(event, photo, index) => {
                     handlePreview(photo)
                   }}
+                  renderPhoto={NextJsImage}
                 />
               </Timeline.Item>
             )
@@ -104,7 +133,7 @@ export default function Gallery() {
       </div>
 
       <PhotoSlider
-        images={images.map((item) => ({ src: item.url, key: item.id }))}
+        images={images}
         visible={previewModalOpen}
         onClose={() => setPreviewModalOpen(false)}
         index={previewIndex}

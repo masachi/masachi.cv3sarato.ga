@@ -7,7 +7,7 @@ const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app *.googletagmanager.com utteranc.es;
   style-src 'self' 'unsafe-inline';
-  img-src * blob: data: masachi.cv3sarato.ga *.vercel.app;
+  img-src * blob: data: masachi.cv3sarato.ga *.vercel.app img.cv3sarato.ga;
   media-src music.163.com *.music.126.net;
   connect-src *;
   font-src 'self';
@@ -57,6 +57,9 @@ module.exports = withBundleAnalyzer({
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
+  },
+  images: {
+    domains: ['img.cv3sarato.ga'],
   },
   async headers() {
     return [

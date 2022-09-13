@@ -46,12 +46,9 @@ export async function getStaticProps() {
   //     )
   //   })
   //
-  // return {
-  //   props: {
-  //     albums: album,
-  //     images: images,
-  //   },
-  // }
+  return {
+    props: {},
+  }
 }
 
 const getContentByGistId = async (gist_id, fileName) => {

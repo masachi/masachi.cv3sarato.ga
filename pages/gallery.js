@@ -90,15 +90,17 @@ export default function Gallery() {
             }),
         })
 
-        images = gistContent[date]
-          .filter((items) => items.length > 0)
-          .map((items) => {
-            let item = items[items.length - 1]
-            return {
-              src: `${process.env.NEXT_PUBLIC_IMG_DOMAIN}${item.path}`,
-              id: item.id,
-            }
-          })
+        images.push(
+          ...gistContent[date]
+            .filter((items) => items.length > 0)
+            .map((items) => {
+              let item = items[items.length - 1]
+              return {
+                src: `${process.env.NEXT_PUBLIC_IMG_DOMAIN}${item.path}`,
+                id: item.id,
+              }
+            })
+        )
       })
 
     setImages(images)

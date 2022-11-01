@@ -15,7 +15,7 @@ import Analytics from '@/components/analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
 import { ClientReload } from '@/components/ClientReload'
 
-import dynamic from 'next/dynamic'
+import ReactCanvasNest from '@/lib/reactCanvasNest'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
@@ -28,6 +28,15 @@ export default function App({ Component, pageProps }) {
       </Head>
       {isDevelopment && isSocket && <ClientReload />}
       <Analytics />
+      <ReactCanvasNest
+        className="canvasNest"
+        config={{
+          pointColor: ' 255, 255, 255 ',
+          count: 100 * 3,
+          pointOpacity: 0.2,
+        }}
+        style={{ zIndex: -1, opacity: 0.2 }}
+      />
       <LayoutWrapper>
         <Component {...pageProps} />
       </LayoutWrapper>

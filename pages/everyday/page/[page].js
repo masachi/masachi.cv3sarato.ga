@@ -1,12 +1,12 @@
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-import ListLayout from '@/layouts/ListLayout'
-import { POSTS_PER_PAGE } from '../../blog'
+import EverydayListLayout from '@/layouts/EverydayListLayout'
+import { EVERYDAYS_PER_PAGE } from '../../everyday'
 
 export async function getStaticPaths() {
-  const totalPosts = await getAllFilesFrontMatter('blog')
-  const totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE)
+  const totalEverydays = await getAllFilesFrontMatter('everyday')
+  const totalPages = Math.ceil(totalEverydays.length / EVERYDAYS_PER_PAGE)
   const paths = Array.from({ length: totalPages }, (_, i) => ({
     params: { page: (i + 1).toString() },
   }))
@@ -21,35 +21,35 @@ export async function getStaticProps(context) {
   const {
     params: { page },
   } = context
-  const posts = await getAllFilesFrontMatter('blog')
+  const everydays = await getAllFilesFrontMatter('everyday')
   const pageNumber = parseInt(page)
-  const initialDisplayPosts = posts.slice(
-    POSTS_PER_PAGE * (pageNumber - 1),
-    POSTS_PER_PAGE * pageNumber
+  const initialDisplayEverydays = everydays.slice(
+    EVERYDAYS_PER_PAGE * (pageNumber - 1),
+    EVERYDAYS_PER_PAGE * pageNumber
   )
   const pagination = {
     currentPage: pageNumber,
-    totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
+    totalPages: Math.ceil(everydays.length / EVERYDAYS_PER_PAGE),
   }
 
   return {
     props: {
-      posts,
-      initialDisplayPosts,
+      everydays,
+      initialDisplayEverydays,
       pagination,
     },
   }
 }
 
-export default function PostPage({ posts, initialDisplayPosts, pagination }) {
+export default function EverydayPage({ everydays, initialDisplayEverydays, pagination }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <ListLayout
-        posts={posts}
-        initialDisplayPosts={initialDisplayPosts}
+      <EverydayListLayout
+        posts={everydays}
+        initialDisplayPosts={initialDisplayEverydays}
         pagination={pagination}
-        title="All Posts"
+        title="每日一冲"
       />
     </>
   )

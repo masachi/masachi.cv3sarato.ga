@@ -1,15 +1,13 @@
-import fs from 'fs'
 import PageTitle from '@/components/PageTitle'
-import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
 
-const DEFAULT_LAYOUT = 'PostLayout'
+const DEFAULT_LAYOUT = 'EverydayPostLayout'
 
 export async function getStaticPaths() {
-  const posts = getFiles('blog')
+  const everydays = getFiles('everyday')
   return {
-    paths: posts.map((p) => ({
+    paths: everydays.map((p) => ({
       params: {
         slug: formatSlug(p).split('/'),
       },
@@ -19,12 +17,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const allPosts = await getAllFilesFrontMatter('blog')
-  const postIndex = allPosts.findIndex((post) => formatSlug(post.slug) === params.slug.join('/'))
-  const prev = allPosts[postIndex + 1] || null
-  const next = allPosts[postIndex - 1] || null
-  const post = await getFileBySlug('blog', params.slug.join('/'))
-  const authorList = post.frontMatter.authors || ['default']
+  const allEverydays = await getAllFilesFrontMatter('everyday')
+  const everydayIndex = allEverydays.findIndex(
+    (everyday) => formatSlug(everyday.slug) === params.slug.join('/')
+  )
+  const prev = allEverydays[everydayIndex + 1] || null
+  const next = allEverydays[everydayIndex - 1] || null
+  const everyday = await getFileBySlug('everyday', params.slug.join('/'))
+  const authorList = everyday.frontMatter.authors || ['default']
   const authorPromise = authorList.map(async (author) => {
     const authorResults = await getFileBySlug('authors', [author])
     return authorResults.frontMatter
@@ -32,16 +32,16 @@ export async function getStaticProps({ params }) {
   const authorDetails = await Promise.all(authorPromise)
 
   // rss
-  if (allPosts.length > 0) {
-    const rss = generateRss(allPosts)
-    fs.writeFileSync('./public/feed.xml', rss)
-  }
+  // if (allPosts.length > 0) {
+  //   const rss = generateRss(allPosts)
+  //   fs.writeFileSync('./public/feed.xml', rss)
+  // }
 
-  return { props: { post, authorDetails, prev, next } }
+  return { props: { everyday, authorDetails, prev, next } }
 }
 
-export default function Blog({ post, authorDetails, prev, next }) {
-  const { mdxSource, toc, frontMatter } = post
+export default function Blog({ everyday, authorDetails, prev, next }) {
+  const { mdxSource, toc, frontMatter } = everyday
 
   return (
     <>
@@ -58,7 +58,7 @@ export default function Blog({ post, authorDetails, prev, next }) {
       ) : (
         <div className="mt-24 text-center">
           <PageTitle>
-            Under Construction{' '}
+            施工中{' '}
             <span role="img" aria-label="roadwork sign">
               🚧
             </span>

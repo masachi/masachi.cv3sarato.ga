@@ -5,7 +5,7 @@ const siteMetadata = {
   description: '自认为没什么营养的辣鸡网站',
   language: 'zh-cn',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://masachi.cv3sarato.ga',
+  siteUrl: 'https://masachi.bronya.autos',
   siteRepo: 'https://github.com/masachi/masachi.github.io',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',

@@ -45,7 +45,11 @@ const octokit = new Octokit({
 const getContentByGistId = async (gist_id, fileName) => {
   const gistGetResponse = await octokit.request(`GET /gists/${gist_id}`)
   if (gistGetResponse.status === 200) {
-    return JSON.parse(gistGetResponse.data.files[fileName].content)
+    if (gistGetResponse.data.files[fileName].raw_url) {
+      let rawJsonResponse = await fetch(gistGetResponse.data.files[fileName].raw_url)
+      let rawJson = await rawJsonResponse.json()
+      return JSON.parse(rawJson)
+    }
   }
 
   return {}

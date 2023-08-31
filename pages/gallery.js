@@ -48,7 +48,7 @@ const getContentByGistId = async (gist_id, fileName) => {
     if (gistGetResponse.data.files[fileName].raw_url) {
       let rawJsonResponse = await fetch(gistGetResponse.data.files[fileName].raw_url)
       let rawJson = await rawJsonResponse.json()
-      return JSON.parse(rawJson)
+      return rawJson
     }
   }
 

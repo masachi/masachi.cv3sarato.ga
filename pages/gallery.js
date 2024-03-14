@@ -139,7 +139,7 @@ export default function Gallery() {
       <PageSEO title={`个人收藏沙雕图`} description={`个人收藏沙雕图`} />
 
       <div className={'gallery-container'}>
-        <Timeline mode={'left'}>
+        {/* <Timeline mode={'left'}>
           {albums.map((dateImages) => {
             return (
               <Timeline.Item key={dateImages.date} label={dateImages.date}>
@@ -154,7 +154,7 @@ export default function Gallery() {
               </Timeline.Item>
             )
           })}
-        </Timeline>
+        </Timeline> */}
       </div>
 
       <PhotoSlider

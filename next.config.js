@@ -7,7 +7,7 @@ const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app *.googletagmanager.com utteranc.es;
   style-src 'self' 'unsafe-inline';
-  img-src * blob: data: masachi.bronya.autos *.vercel.app img.bronya.autos cdn.bronya.autos;
+  img-src * blob: data: masachi.bronya.autos *.vercel.app img.bronya.autos cdn.bronya.autos cdn.statically.io;
   media-src music.163.com *.music.126.net;
   connect-src *;
   font-src 'self';
@@ -59,7 +59,7 @@ module.exports = withBundleAnalyzer({
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
   },
   images: {
-    domains: ['img.bronya.autos', 'cdn.bronya.autos'],
+    domains: ['img.bronya.autos', 'cdn.bronya.autos', 'cdn.statically.io'],
   },
   async headers() {
     return [

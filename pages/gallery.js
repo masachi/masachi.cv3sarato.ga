@@ -70,6 +70,16 @@ export default function Gallery() {
     }
   }
 
+  const filePathProcessor = (path) => {
+    if (process.env.NEXT_PUBLIC_IMG_DOMAIN.includes('statically')) {
+      let fileName = path.replace('/file/', '')
+
+      return `/${fileName.slice(0, 2)}/${fileName}`
+    }
+
+    return path
+  }
+
   const dataProcess = async () => {
     const gistContent = await getContentByGistId(
       process.env.NEXT_PUBLIC_GIST_ID,
@@ -77,6 +87,7 @@ export default function Gallery() {
     )
     let album = []
     let images = []
+
     Object.keys(gistContent)
       .sort((dateA, dateB) => dayjs(dateB).unix() - dayjs(dateA).unix())
       .forEach((date) => {
@@ -84,12 +95,16 @@ export default function Gallery() {
           date: date,
           thumbnails: gistContent[date]
             .filter((items) => items.length > 0)
+            .filter((items) => {
+              let item = items[items.length >= 2 ? items.length - 2 : items[0]]
+              return item?.path !== undefined
+            })
             .map((items) => {
               let item = items[items.length >= 2 ? items.length - 2 : items[0]]
               return {
                 ...item,
-                url: `${process.env.NEXT_PUBLIC_IMG_DOMAIN}${item.path}`,
-                src: `${process.env.NEXT_PUBLIC_IMG_DOMAIN}${item.path}`,
+                url: `${process.env.NEXT_PUBLIC_IMG_DOMAIN}${filePathProcessor(item.path)}`,
+                src: `${process.env.NEXT_PUBLIC_IMG_DOMAIN}${filePathProcessor(item.path)}`,
               }
             }),
         })
@@ -97,10 +112,14 @@ export default function Gallery() {
         images.push(
           ...gistContent[date]
             .filter((items) => items.length > 0)
+            .filter((items) => {
+              let item = items[items.length - 1]
+              return item?.path !== undefined
+            })
             .map((items) => {
               let item = items[items.length - 1]
               return {
-                src: `${process.env.NEXT_PUBLIC_IMG_DOMAIN}${item.path}`,
+                src: `${process.env.NEXT_PUBLIC_IMG_DOMAIN}${filePathProcessor(item.path)}`,
                 id: item.id,
               }
             })
